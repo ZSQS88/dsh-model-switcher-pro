@@ -1,6 +1,6 @@
 {
   "name": "dsh-model-switcher-pro",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Enhanced model picker + Codex-style reasoning-effort slider for the DeepSeek Harness composer: named tiers with magnetic detents and damped glide, per-tier signature palette, Max flow, dark/light schemes, full ARIA, and an opt-in host-composer restyle. Derivative of youssefsiam38/dsh-plugins (MIT).",
   "license": "MIT",
   "type": "module",
@@ -28,7 +28,6 @@
     "lib/client.js.map",
     "lib/types/**/*.d.ts",
     "cordis.patch.yml",
-    "docs/demo.gif",
     "docs/picker-dark.png",
     "docs/picker-light.png",
     "docs/picker-providers.png",
