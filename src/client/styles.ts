@@ -44,6 +44,27 @@ export const MODEL_SWITCHER_CSS = `
   from { background-position: 0% 0; }
   to { background-position: 300% 0; }
 }
+@keyframes dmsMaxGlow {
+  0%, 100% { box-shadow: inset 0 1px 2px rgba(0, 0, 0, .32), 0 0 14px var(--dms-tier-glow, rgba(91, 140, 255, .42)), 0 0 30px var(--dms-tier-soft, rgba(91, 140, 255, .22)); }
+  50% { box-shadow: inset 0 1px 2px rgba(0, 0, 0, .32), 0 0 26px var(--dms-tier-glow, rgba(91, 140, 255, .6)), 0 0 48px var(--dms-tier-soft, rgba(91, 140, 255, .34)); }
+}
+@keyframes dmsMaxHalo {
+  0%, 100% { box-shadow: 0 0 0 4px var(--dms-tier-soft, rgba(91, 140, 255, .18)), 0 0 16px var(--dms-tier-glow, rgba(91, 140, 255, .5)), 0 2px 7px rgba(0, 0, 0, .42); }
+  50% { box-shadow: 0 0 0 7px var(--dms-tier-soft, rgba(91, 140, 255, .26)), 0 0 30px var(--dms-tier-glow, rgba(91, 140, 255, .75)), 0 2px 7px rgba(0, 0, 0, .42); }
+}
+@keyframes dmsMaxOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes dmsMaxCoreSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes dmsMaxRing {
+  0% { opacity: .8; transform: translate(-50%, -50%) scale(.5); }
+  70% { opacity: .25; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.1); }
+}
 @keyframes dmsTickPop {
   0% { transform: translate(-50%, -50%) scale(1); }
   45% { transform: translate(-50%, -50%) scale(1.7); }
@@ -294,6 +315,34 @@ export const MODEL_SWITCHER_CSS = `
   mix-blend-mode: screen; opacity: .85;
   animation: dmsMaxFlow 3.2s linear infinite;
 }
+/* Max-tier spectacle: traveling comet band, energy wave, breathing track glow,
+   orbiting thumb sparks, spinning energy core, and a recurring ring pulse.
+   All clipped to / centered on the animated fill so they stay synced to the
+   thumb;收敛 while dragging; disabled under reduced motion; light-mode tuned. */
+.${C.effortSlider}[data-max] .${C.effortTrack}::after {
+  background: linear-gradient(90deg, #A9C4FF 0%, var(--dms-tier, #FF5B8C) 22%, #8B5BFF 40%, rgba(255, 255, 255, .95) 50%, #8B5BFF 60%, var(--dms-tier, #FF5B8C) 78%, #A9C4FF 100%);
+  background-size: 300% 100%;
+  opacity: .95; filter: saturate(1.25);
+  animation: dmsMaxFlow 2.2s linear infinite;
+}
+.${C.effortSlider}[data-max] .${C.effortTrack}::before { opacity: .8; animation: dmsFillSheen 1.5s ease-in-out infinite; }
+.${C.effortSlider}[data-max] .${C.effortTrack} { animation: dmsMaxGlow 1.8s ease-in-out infinite; }
+.${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumb} { animation: dmsMaxHalo 1.6s ease-in-out infinite; }
+.${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumb}::before {
+  content: ''; position: absolute; inset: -7px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .95) 0 2px, transparent 3px);
+  animation: dmsMaxOrbit 1.8s linear infinite;
+}
+.${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumb}::after {
+  content: ''; position: absolute; inset: -11px; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, var(--dms-tier, #FF5B8C) 0 2px, transparent 3px);
+  animation: dmsMaxOrbit 2.6s linear infinite reverse;
+}
+.${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumbCore} {
+  background: conic-gradient(from 0deg, transparent 0 68%, rgba(255, 255, 255, .55) 84%, transparent 100%), radial-gradient(circle at 35% 30%, #FFFFFF, color-mix(in srgb, var(--dms-tier, #5B8CFF) 30%, #FFFFFF) 72%);
+  animation: dmsMaxCoreSpin 2.4s linear infinite;
+}
+.${C.effortSlider}[data-max] .${C.effortBurst} { animation: dmsMaxRing 1.8s cubic-bezier(.2, .7, .3, 1) infinite; }
 .${C.effortTrack} {
   position: absolute; left: 0; right: 0; top: 50%; height: 16px; transform: translateY(-50%);
   border-radius: 999px;
@@ -430,6 +479,9 @@ body:not([data-ds-dark-theme]) .${C.effortTrack} {
 body:not([data-ds-dark-theme]) .${C.effortSlider}[data-dragging] .${C.effortTrack} { box-shadow: inset 0 1px 2px rgba(20, 26, 38, .2), 0 0 22px var(--dms-tier-glow, rgba(91, 140, 255, .36)); }
 body:not([data-ds-dark-theme]) .${C.effortTrack}::before { mix-blend-mode: normal; opacity: .38; }
 body:not([data-ds-dark-theme]) .${C.effortSlider}[data-max] .${C.effortTrack}::after { mix-blend-mode: multiply; opacity: .5; }
+body:not([data-ds-dark-theme]) .${C.effortSlider}[data-max] .${C.effortThumb}::before,
+body:not([data-ds-dark-theme]) .${C.effortSlider}[data-max] .${C.effortThumb}::after { opacity: .7; }
+body:not([data-ds-dark-theme]) .${C.effortSlider}[data-max] .${C.effortTrack} { filter: saturate(1.05); }
 body:not([data-ds-dark-theme]) .${C.effortTick} { background: color-mix(in srgb, var(--dsw-alias-label-primary) 26%, transparent); }
 body:not([data-ds-dark-theme]) .${C.effortThumb} { border-color: color-mix(in srgb, var(--dms-tier, #5B8CFF) 68%, #1E2637); }
 body:not([data-ds-dark-theme]) .${C.effortThumbCore} { background: radial-gradient(circle at 35% 30%, #FFFFFF, color-mix(in srgb, var(--dms-tier, #5B8CFF) 55%, #FFFFFF) 72%); }
@@ -449,6 +501,10 @@ body:not([data-ds-dark-theme]) .${C.searchHint} { color: var(--dsw-alias-label-t
   .${C.effortSlider}[data-dragging] .${C.effortTick}[data-passed] { animation: none; }
   .${C.effortBurst} { animation: none; opacity: 0; }
   .${C.effortSlider}[data-max] .${C.effortTrack}::after { animation: none; opacity: 0; }
+  .${C.effortSlider}[data-max] .${C.effortTrack} { animation: none; }
+  .${C.effortSlider}[data-max] .${C.effortThumb} { animation: none; }
+  .${C.effortSlider}[data-max] .${C.effortThumb}::before,
+  .${C.effortSlider}[data-max] .${C.effortThumb}::after { animation: none; opacity: 0; }
   .${C.effortSlider}[data-dragging] { transition: none; }
   .${C.effortTick} { transition: none; }
   .${C.effortSlider}, .${C.effortThumb} { transition: none; }
