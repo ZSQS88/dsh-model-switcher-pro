@@ -17,9 +17,9 @@ for both the **Web** profile and the **Desktop** (Electron) app.
 > [NOTICE](NOTICE). It is published under a new name because `dsh-model-switcher`
 > is already taken on npm by the upstream author.
 
-![Reasoning-effort slider beside the composer model trigger: named tiers, per-tier palette, Max flow](assets/screenshot-effort-dark.png)
+![Reasoning-effort slider beside the composer model trigger: named tiers, per-tier palette, Max flow](assets/screenshot-effort-dark.png?v=20261120)
 
-![Narrow-screen effort slider](assets/screenshot-effort-narrow.png)
+![Narrow-screen effort slider](assets/screenshot-effort-narrow.png?v=20261120)
 
 ![Motion: damped glide between tiers and the Max-tier flow](assets/effort-glide.gif)
 
@@ -60,11 +60,11 @@ The base picker is unchanged in behavior:
 Other plugins can open the same popover to pick one or several models (see
 [For plugin authors](#for-plugin-authors)).
 
-![Picker: provider select, grouped fuzzy search, badges](docs/picker-providers.png)
+![Picker: provider select, grouped fuzzy search, badges](docs/picker-providers.png?v=20261120)
 
 | Dark | Light | Phone sheet |
 |---|---|---|
-| ![Dark](docs/picker-dark.png) | ![Light](docs/picker-light.png) | ![Sheet](docs/picker-sheet.png) |
+| ![Dark](docs/picker-dark.png?v=20261120) | ![Light](docs/picker-light.png?v=20261120) | ![Sheet](docs/picker-sheet.png?v=20261120) |
 
 *Picker screenshots illustrate the base UI carried over from upstream; the
 reasoning-effort slider and the design pass are described above.*
@@ -301,14 +301,14 @@ Reasoning-effort tiers, each with its own signature palette (Off → Low → Med
 
 Dark and light schemes, effort popover and model picker:
 
-![Dark effort slider](assets/screenshot-effort-dark.png)
+![Dark effort slider](assets/screenshot-effort-dark.png?v=20261120)
 ![Light effort slider](assets/screenshot-effort-light.png)
-![Dark model picker](assets/screenshot-menu-dark.png)
-![Light model picker](assets/screenshot-menu-light.png)
+![Dark model picker](assets/screenshot-menu-dark.png?v=20261120)
+![Light model picker](assets/screenshot-menu-light.png?v=20261120)
 
 Narrow screen (ends-only scale, full-width sheet):
 
-![Narrow-screen effort slider](assets/screenshot-effort-narrow.png)
+![Narrow-screen effort slider](assets/screenshot-effort-narrow.png?v=20261120)
 
 ## Attribution
 
