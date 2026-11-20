@@ -13,6 +13,10 @@ for both the **Web** profile and the **Desktop** (Electron) app.
 > [NOTICE](NOTICE). It is published under a new name because `dsh-model-switcher`
 > is already taken on npm by the upstream author.
 
+![Reasoning-effort slider beside the composer model trigger: named tiers, per-tier palette, Max flow](assets/screenshot-effort-dark.png)
+
+![Narrow-screen effort slider](assets/screenshot-effort-narrow.png)
+
 ## What this fork adds
 
 - **Reasoning-effort slider beside the model trigger.** A compact button shows the
