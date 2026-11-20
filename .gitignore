@@ -1,0 +1,9 @@
+node_modules/
+lib/
+*.tgz
+*.log
+debug.log
+.artifacts/
+coverage/
+*.bak*
+.DS_Store

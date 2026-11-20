@@ -1,0 +1,34 @@
+dsh-model-switcher-pro
+Copyright (c) 2026 dsh-model-switcher-pro contributors
+
+This product is a derivative of "dsh-model-switcher" from the dsh-plugins
+project by Youssef Siam (https://github.com/youssefsiam38/dsh-plugins),
+licensed under the MIT License. The upstream copyright and permission notice
+are retained in full in the LICENSE file.
+
+Upstream author:
+  Copyright (c) 2026 Youssef Siam
+
+Modifications in this fork (the "pro" enhanced edition) include:
+  - A Codex-style reasoning-effort slider popover beside the composer model
+    trigger: named tiers with a per-tier signature palette, magnetic detents,
+    a damped glide (170 ms) while dragging, a Max-flow treatment at the top
+    tier, animated tick/sheen feedback, a live value readout, full ARIA slider
+    semantics, keyboard control, and a prefers-reduced-motion path.
+  - A dark/light theme token pass for the picker and effort popover, including
+    a light-scheme contrast pass for tier ink, tracks, ticks, and hints.
+  - Design-only polish: roomier rows, a unified type ladder, token-based hover
+    and press feedback, and narrow-screen fallbacks (ends-only effort scale
+    under 520 px; full-width bottom sheet on phones). No business logic changed.
+  - An opt-in host-composer restyle (composerRestyle, default OFF), shipped in a
+    separate stylesheet the client mounts only when the user enables it, because
+    its selectors are host-global.
+  - Renamed package/plugin identity to dsh-model-switcher-pro (the upstream npm
+    name dsh-model-switcher is already published by the upstream author). The
+    browser localStorage key (dsh-model-switcher:v1) and the locale dictionary
+    namespace (model-switcher) are kept stable so existing user history survives.
+
+The base picker behavior, keyboard model, enrichment reads, and the modelSwitcher
+client service are carried over from upstream. Provider marks are generated from
+simple-icons (https://github.com/simple-icons/simple-icons), CC0-1.0; the brands
+belong to their respective owners.
