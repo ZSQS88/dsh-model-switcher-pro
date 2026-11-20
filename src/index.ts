@@ -1,11 +1,11 @@
 /**
- * Host half of `dsh-model-switcher`. The picker itself runs in the browser
+ * Host half of `dsh-model-switcher-pro`. The picker itself runs in the browser
  * (`./client`); this half validates the bundle-row `config` and publishes it
  * to the page as the `__DSH_MODEL_SWITCHER__` global through
  * `webserver/index-inject`, before browser plugins activate. In a profile
  * without the Web server nothing listens for that event and the plugin is
  * inert.
- * @module dsh-model-switcher
+ * @module dsh-model-switcher-pro
  */
 
 import type { Context } from '@deepseek-ai/cordis'

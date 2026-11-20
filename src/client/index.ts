@@ -1,5 +1,5 @@
 /**
- * Browser half of `dsh-model-switcher`: registers the picker in the
+ * Browser half of `dsh-model-switcher-pro`: registers the picker in the
  * composer's `conversation.input.model` seat at a negative priority, which
  * shadows the stock control (priority 0) while this plugin is loaded and
  * hands the seat back when it unloads. Data and writes go through the stock
@@ -10,7 +10,7 @@
  *
  * It also provides the `modelSwitcher` client service (`pick-service.ts`):
  * the same surface in picker mode over the Host catalog, for other plugins.
- * @module dsh-model-switcher/client
+ * @module dsh-model-switcher-pro/client
  */
 
 import { createElement } from 'react'
