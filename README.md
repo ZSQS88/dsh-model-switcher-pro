@@ -74,20 +74,26 @@ reasoning-effort slider and the design pass are described above.*
 
 ## Install
 
+This plugin is distributed from **GitHub** (not published to npm). Install by
+GitHub spec, or from the prebuilt Release tarball.
+
 Web profile:
 
 ```sh
-dsh plugin --profile web add dsh-model-switcher-pro
+dsh plugin --profile web add github:ZSQS88/dsh-model-switcher-pro
 ```
 
-Desktop app: open **Plugins** and install by npm name `dsh-model-switcher-pro`,
-or by GitHub spec `github:ZSQS88/dsh-model-switcher-pro`. The desktop profile
-drives the renderer; **fully restart the app** to reload client plugins.
+Desktop app: open **Plugins** and install by GitHub spec
+`github:ZSQS88/dsh-model-switcher-pro`. The desktop profile drives the renderer;
+**fully restart the app** to reload client plugins.
 
-From a packed tarball:
+Prebuilt tarball (skips the build-approval step): download
+`dsh-model-switcher-pro.tgz` from the
+[v0.4.0 Release](https://github.com/ZSQS88/dsh-model-switcher-pro/releases/latest),
+then:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/dsh-model-switcher-pro-0.4.0.tgz
+dsh plugin --profile web add ./dsh-model-switcher-pro.tgz
 ```
 
 The bundle patch (`cordis.patch.yml`) inserts one plugin row:
