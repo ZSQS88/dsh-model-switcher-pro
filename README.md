@@ -21,6 +21,8 @@ for both the **Web** profile and the **Desktop** (Electron) app.
 
 ![Narrow-screen effort slider](assets/screenshot-effort-narrow.png)
 
+![Motion: damped glide between tiers and the Max-tier flow](assets/effort-glide.gif)
+
 ## What this fork adds
 
 - **Reasoning-effort slider beside the model trigger.** A compact button shows the
