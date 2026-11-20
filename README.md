@@ -99,7 +99,7 @@ Desktop app: open **Plugins** and install by GitHub spec
 
 Prebuilt tarball (skips the build-approval step): download
 `dsh-model-switcher-pro.tgz` from the
-[v0.4.1 Release](https://github.com/ZSQS88/dsh-model-switcher-pro/releases/latest),
+[v0.4.2 Release](https://github.com/ZSQS88/dsh-model-switcher-pro/releases/latest),
 then:
 
 ```sh

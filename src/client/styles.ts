@@ -13,6 +13,7 @@ const MONO = 'var(--dsw-font-mono, ui-monospace, SFMono-Regular, Menlo, monospac
 /** The plugin's CSS, injected once while the client plugin is loaded. */
 export const MODEL_SWITCHER_CSS = `
 @property --dms-effort-pos { syntax: '<number>'; inherits: true; initial-value: 0; }
+@property --dms-core-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
 @keyframes dmsEffortValueIn {
   0% { opacity: 0; transform: translateY(3px) scale(.8); }
   60% { opacity: 1; transform: translateY(-1px) scale(1.06); }
@@ -57,13 +58,13 @@ export const MODEL_SWITCHER_CSS = `
   to { transform: rotate(360deg); }
 }
 @keyframes dmsMaxCoreSpin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { --dms-core-angle: 0deg; }
+  to { --dms-core-angle: 360deg; }
 }
 @keyframes dmsMaxRing {
-  0% { opacity: .8; transform: translate(-50%, -50%) scale(.5); }
-  70% { opacity: .25; }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(2.1); }
+  0% { opacity: .7; transform: translate(-50%, -50%) scale(1); }
+  70% { opacity: .22; }
+  100% { opacity: 0; transform: translate(-50%, -50%) scale(1.32); }
 }
 @keyframes dmsTickPop {
   0% { transform: translate(-50%, -50%) scale(1); }
@@ -330,16 +331,16 @@ export const MODEL_SWITCHER_CSS = `
 .${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumb} { animation: dmsMaxHalo 1.6s ease-in-out infinite; }
 .${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumb}::before {
   content: ''; position: absolute; inset: -7px; border-radius: 50%; pointer-events: none;
-  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, .95) 0 2px, transparent 3px);
+  background: radial-gradient(circle at 50% 2.5px, rgba(255, 255, 255, .95) 0 2px, transparent 3px);
   animation: dmsMaxOrbit 1.8s linear infinite;
 }
 .${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumb}::after {
   content: ''; position: absolute; inset: -11px; border-radius: 50%; pointer-events: none;
-  background: radial-gradient(circle at 50% 0%, var(--dms-tier, #FF5B8C) 0 2px, transparent 3px);
+  background: radial-gradient(circle at 50% 2.5px, var(--dms-tier, #FF5B8C) 0 2px, transparent 3px);
   animation: dmsMaxOrbit 2.6s linear infinite reverse;
 }
 .${C.effortSlider}[data-max]:not([data-dragging]) .${C.effortThumbCore} {
-  background: conic-gradient(from 0deg, transparent 0 68%, rgba(255, 255, 255, .55) 84%, transparent 100%), radial-gradient(circle at 35% 30%, #FFFFFF, color-mix(in srgb, var(--dms-tier, #5B8CFF) 30%, #FFFFFF) 72%);
+  background: conic-gradient(from var(--dms-core-angle, 0deg), transparent 0 62%, color-mix(in srgb, var(--dms-tier, #FF5B8C) 55%, #FFFFFF) 80%, transparent 96%), radial-gradient(circle at 35% 30%, #FFFFFF, color-mix(in srgb, var(--dms-tier, #5B8CFF) 30%, #FFFFFF) 72%);
   animation: dmsMaxCoreSpin 2.4s linear infinite;
 }
 .${C.effortSlider}[data-max] .${C.effortBurst} { animation: dmsMaxRing 1.8s cubic-bezier(.2, .7, .3, 1) infinite; }
