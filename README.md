@@ -252,13 +252,19 @@ data.
 ## Development
 
 ```sh
-pnpm install
-pnpm --filter dsh-model-switcher-pro run marks        # regenerate provider marks (pinned simple-icons)
-pnpm --filter dsh-model-switcher-pro run typecheck
-pnpm --filter dsh-model-switcher-pro test
-pnpm --filter dsh-model-switcher-pro run build
-pnpm --filter dsh-model-switcher-pro run pack:tarball # .artifacts/dsh-model-switcher-pro-<version>.tgz
+npm install
+npm run marks         # regenerate provider marks (pinned simple-icons)
+npm run build         # lib/index.js (host) + lib/client.js (browser)
+npm run typecheck
+npm run check:bundle  # assert client bundle id and host name == package name
+npm test              # 74 unit tests
+npm run pack:tarball  # writes .artifacts/dsh-model-switcher-pro-<version>.tgz
 ```
+
+> Node 25+/26 ships an experimental native `localStorage` that shadows jsdom's in
+> tests (`Cannot read properties of undefined (reading 'clear')`). Either use
+> Node 22/24, or run `NODE_OPTIONS=--no-experimental-webstorage npm test`. This
+> affects the test environment only, not the shipped browser bundle.
 
 Unit tests cover ranking/grouping, favorites/recents storage, enrichment reads and
 wire validation, the component (ARIA, keys, provider→model handoff, Tab cycle,

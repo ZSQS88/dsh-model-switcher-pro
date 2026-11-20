@@ -84,8 +84,8 @@
     "build": "node -e \"require('node:fs').rmSync('lib',{recursive:true,force:true})\" && tsc -p tsconfig.build.host.json && tsc -p tsconfig.build.client.json && tsdown",
     "typecheck": "tsc -p tsconfig.host.json && tsc -p tsconfig.client.json",
     "test": "vitest run",
-    "pack:tarball": "pnpm pack --pack-destination ../../.artifacts",
-    "test:e2e": "pnpm run build && pnpm run pack:tarball && vitest run -c vitest.e2e.config.ts",
+    "pack:tarball": "npm pack --pack-destination .artifacts",
+    "test:e2e": "npm run build && npm run pack:tarball && vitest run -c vitest.e2e.config.ts",
     "marks": "node scripts/marks.mjs",
     "check:bundle": "node scripts/check-bundle-id.mjs"
   },
