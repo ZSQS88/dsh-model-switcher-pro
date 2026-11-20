@@ -1,5 +1,9 @@
 # dsh-model-switcher-pro
 
+[![GitHub release](https://img.shields.io/github/v/release/ZSQS88/dsh-model-switcher-pro?label=release)](https://github.com/ZSQS88/dsh-model-switcher-pro/releases/latest)
+[![GitHub downloads](https://img.shields.io/github/downloads/ZSQS88/dsh-model-switcher-pro/total?label=downloads)](https://github.com/ZSQS88/dsh-model-switcher-pro/releases)
+[![License: MIT](https://img.shields.io/github/license/ZSQS88/dsh-model-switcher-pro)](LICENSE)
+
 An enhanced model picker **and Codex-style reasoning-effort slider** for the
 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) (dsh) composer,
 for both the **Web** profile and the **Desktop** (Electron) app.
