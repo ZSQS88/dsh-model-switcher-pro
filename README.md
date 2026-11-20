@@ -288,6 +288,28 @@ scheme, phone sheet), the browser plugin on a real Cordis context, the
 that must be refused). The browser test (`e2e/`) installs the packed plugin into a
 throwaway `DSH_HOME` and drives Chromium end to end.
 
+## Screenshots
+
+Reasoning-effort tiers, each with its own signature palette (Off → Low → Medium → High → Xhigh → Max), plus the Max-tier flow and the damped drag glide:
+
+![Off tier](assets/screenshot-tier-off.png)
+![Low tier](assets/screenshot-tier-low.png)
+![High tier](assets/screenshot-tier-high.png)
+![Max tier](assets/screenshot-tier-max.png)
+![Max glide](assets/screenshot-tier-max-glide.png)
+![Mid-drag at Xhigh](assets/screenshot-glide-mid.png)
+
+Dark and light schemes, effort popover and model picker:
+
+![Dark effort slider](assets/screenshot-effort-dark.png)
+![Light effort slider](assets/screenshot-effort-light.png)
+![Dark model picker](assets/screenshot-menu-dark.png)
+![Light model picker](assets/screenshot-menu-light.png)
+
+Narrow screen (ends-only scale, full-width sheet):
+
+![Narrow-screen effort slider](assets/screenshot-effort-narrow.png)
+
 ## Attribution
 
 MIT. This is a derivative of **Youssef Siam**'s
