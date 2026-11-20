@@ -292,14 +292,12 @@ throwaway `DSH_HOME` and drives Chromium end to end.
 
 ## Screenshots
 
-Reasoning-effort tiers, each with its own signature palette (Off → Low → Medium → High → Xhigh → Max), plus the Max-tier flow and the damped drag glide:
+Reasoning-effort tiers, each with its own signature palette (Off → Low → Medium → High → Xhigh → Max). The motion GIF above already shows the damped glide and the Max-tier flow:
 
 ![Off tier](assets/screenshot-tier-off.png)
 ![Low tier](assets/screenshot-tier-low.png)
 ![High tier](assets/screenshot-tier-high.png)
 ![Max tier](assets/screenshot-tier-max.png)
-![Max glide](assets/screenshot-tier-max-glide.png)
-![Mid-drag at Xhigh](assets/screenshot-glide-mid.png)
 
 Dark and light schemes, effort popover and model picker:
 
